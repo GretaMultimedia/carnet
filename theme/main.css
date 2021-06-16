@@ -1,6 +1,113 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100&family=Roboto&display=swap');
+*{
+    margin:0;
+    padding:0;
+    outline: none;
+}
+html{
+    font-size : 16px;
+    font-family: 'Roboto', sans-serif;
+
+
+}
+
+body{
+    min-height :100vh;
+    position:relative;
+    padding-bottom: 4rem;
+    box-sizing: border-box;
+}
+
+header{
+    padding:2em;
+}
+header h1 {
+    min-width:80vw;
+    margin:0 auto;
+    font-family: 'Montserrat', sans-serif;
+    text-align:center;
+}
+
 nav{
     border-bottom: 1px solid black;
+
 }
+nav>ul {
+    position:relative;
+}
+nav>ul>li{
+    display:inline-block;
+}
+
+nav>ul>li:last-of-type{
+    position:absolute;
+    right:1em;
+    padding:1em;
+    
+    
+}
+
+
+nav>ul>li>a {
+    color:black;
+    font-weight: bold;
+    text-decoration: none;
+    display:block;
+    padding:1em;
+}
+nav>ul>li>a:hover{
+    color:tomato;
+    
+  
+} 
+
+
+
 footer{
     border-top: 1px solid black;
+    position:absolute;
+    bottom:0;
+    left:0;
+    width:100%;
+}
+footer p {
+    padding:1em;
+    text-align:center;
+}
+
+main{
+    padding:2em;
+}
+
+main table{
+    width:100%;
+}
+main table td:nth-of-type(2){
+    text-align:right;
+}
+
+main table tr:hover{
+    background-color: tomato;
+    color:white;
+}
+
+main h2{
+    color:tomato;
+    margin-bottom:1em;
+}
+/*
+main table a.controle{
+
+}
+*/
+div#civilite>figure{
+    float:right;
+}
+
+div#civilite>figure>img{
+    height:150px;
+}
+
+div#civilite>p{
+    margin-bottom:1em;
 }
