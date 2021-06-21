@@ -22,7 +22,8 @@ try{
     }
 
     if (isset($_GET['confirm']) && $_GET["confirm"]==1){
-
+        
+        $_SESSION["msg"]="dans le if";
         $requete_suppr=$db->prepare("DELETE FROM contacts WHERE id=?");
         $requete_suppr->execute(array($id));
 

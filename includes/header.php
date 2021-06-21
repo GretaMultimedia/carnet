@@ -1,3 +1,7 @@
+<?php
+ $recherche=filter_input(INPUT_GET,"rech",FILTER_SANITIZE_STRING);
+?>
+
 <!DOCTYPE html>
 <html lang="fr">
 <head>
@@ -16,8 +20,8 @@
             <li><a href="liste.php">Liste</a></li>
             <li><a href="ajouter.php">Ajouter</a></li>
             <li>
-                <form action="liste.php" method="post" id="recherche">
-                    <input type="text" name="rech" placeholder="recherche">
+                <form action="liste.php" method="get" id="recherche">
+                    <input type="text" name="rech" placeholder="recherche" value="<?=$recherche?>">
                     <button type="submit">Rechercher</button>
                 </form>
             </li>

@@ -12,13 +12,20 @@
     }
 
 
+   
+
 
     try{
         //connexion à la base de données
         $cnx=new PDO("mysql:host=".BDD_HOST.";dbname=".BDD_DB.";charset=utf8mb4", BDD_USER, BDD_PASS);
         $cnx->setAttribute(PDO::ATTR_ERRMODE,PDO::ERRMODE_EXCEPTION);
 
-        $requete=$cnx->prepare("SELECT id,nom,prenom FROM contacts order by nom,prenom");
+        $requete=$cnx->prepare("SELECT id,nom,prenom FROM contacts
+                                    where 
+                                        nom like '$recherche%' 
+                                        or prenom like '$recherche%'
+                                        or cp like '$recherche%' 
+                                    order by nom,prenom");
         $requete->execute();
 
         $resultat=$requete->fetchAll(PDO::FETCH_ASSOC); // FETCH_ROW | FETCH_OBJ | FETCH_BOTH | FETCH_LAZY
