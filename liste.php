@@ -4,6 +4,15 @@
 
     echo "<h2>Contacts</h2>";
 
+
+    if (!empty ($_SESSION['msg'])){
+
+        print($_SESSION['msg']);
+        unset($_SESSION['msg']);
+    }
+
+
+
     try{
         //connexion à la base de données
         $cnx=new PDO("mysql:host=".BDD_HOST.";dbname=".BDD_DB.";charset=utf8mb4", BDD_USER, BDD_PASS);

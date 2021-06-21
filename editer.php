@@ -5,6 +5,7 @@ if (!$id){
     header("location:liste.php");
     exit();
 }
+session_start();
 
 // récupération du fichier de config
 require "includes/config.inc.php";
@@ -12,6 +13,15 @@ require "includes/config.inc.php";
 require "includes/header.php";
 
 try{
+
+    if(!empty($_SESSION['msg'])){
+
+        print($_SESSION['msg']);
+        unset($_SESSION['msg']);
+
+    }
+
+
     //definition de la source de données
     $db=new PDO("mysql:host=".BDD_HOST.";dbname=".BDD_DB.";charset=utf8mb4",BDD_USER,BDD_PASS);
     // on traite les erreurs en tant qu'exceptions ( optionnel )
@@ -31,9 +41,12 @@ try{
         throw new Exception("Le contact demandé n'existe pas (ou plus).");
     }
 
+
+
+
 ?>
     <form action="maj.php" method="post" id="editForm">
-        <input type="text" name="id" value="<?= $contact->id ?>">
+        <input type="hidden" name="id" value="<?= $contact->id ?>">
         <p>
             <label for="nom">Nom :</label>
             <input type="text" id ="nom" name="nom" value="<?=$contact->nom?>">

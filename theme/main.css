@@ -116,6 +116,10 @@ p.success{
     padding: 2em 0;
     color:green;
 }
+p.error{
+    padding: 2em 0;
+    color:red;
+}
 
 main>form{
     display:table;
