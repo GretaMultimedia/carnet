@@ -64,7 +64,7 @@ if ($email===false && !empty($_POST['email'])){
 }
 catch(PDOException $e){
 
-    $_SESSION["msg"]="<p class=\"error\">Un erreur est survenu lors de l'insertion.<br>Veuillez ré-essayer plus tard</p>";
+    $_SESSION["msg"]="<p class=\"error\">Une erreur est survenue lors de l'insertion.<br>Veuillez ré-essayer plus tard</p>";
     $_SESSION["postdata"]=$_POST;
 }
 catch(Exception $e){

@@ -111,3 +111,8 @@ div#civilite>figure>img{
 div#civilite>p{
     margin-bottom:1em;
 }
+
+p.success{
+    padding: 2em 0;
+    color:green;
+}

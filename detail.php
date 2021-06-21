@@ -17,6 +17,12 @@ try{
 
     $contact=$requete->fetch(PDO::FETCH_OBJ);
 
+    if ( $contact==false ){
+        throw new Exception("Le contact demandé n'existe pas ou plus.");
+    }
+
+
+
 ?>
 
 <h2><?= $contact->prenom ?> <?= $contact->nom ?></h2>
@@ -61,6 +67,9 @@ try{
 }
 catch( PDOException $e){
     echo $e->getMessage();
+}
+catch( Exception $e){
+    echo "<p class=\"error\">".$e->getMessage()."</p>";
 }
 
 
