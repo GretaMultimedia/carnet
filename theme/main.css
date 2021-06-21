@@ -116,3 +116,40 @@ p.success{
     padding: 2em 0;
     color:green;
 }
+
+main>form{
+    display:table;
+    caption-side: bottom;
+    margin:auto;
+    border-spacing: 3px;
+}
+
+main>form>p{
+    display:table-row;
+}
+main>form>p>* {
+    display:table-cell;
+}
+
+main>form>p>input[name=adresse] {
+    width:35em;
+}
+
+main>form>p:last-of-type{
+    display:table-caption;
+    text-align:center;
+}
+main>form>p:last-of-type>button {
+    display:inline-block;
+    padding:1px 1em;
+    background:tomato;
+    border:1px tomato solid;
+    color:white;
+}
+
+main>form>p:last-of-type>button:hover {
+    background:white;
+    border:1px tomato solid;
+    color:tomato;
+}
+
